@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7qn05fm0nug8" path="res://Assets/tilemap.png" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://c56bclrr8wyj7" path="res://Scenes/platform.tscn" id="3_kldst"]
 [ext_resource type="Script" uid="uid://ddi10jpfgfnhj" path="res://Scripts/platform.gd" id="4_7lihs"]
-[ext_resource type="Texture2D" uid="uid://q2fg4ne2nfnj" path="res://Assets/heaven.jpg" id="5_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://breujy4vg1umt" path="res://Assets/heaven.jpg" id="5_b2bpf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kldst"]
 texture = ExtResource("3_j5yw3")
@@ -72,7 +72,7 @@ tile_set = SubResource("TileSet_b2bpf")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1561868100]
 z_index = -1
 position = Vector2(2079.5, -1720.75)
-scale = Vector2(1.8088236, 1.7178218)
+scale = Vector2(3.2375808, 1.7178218)
 texture = ExtResource("5_b2bpf")
 
 [node name="platform" parent="." unique_id=1036846882 instance=ExtResource("3_kldst")]
