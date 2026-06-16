@@ -1,0 +1,104 @@
+[gd_scene format=4 uid="uid://cogrmg8jdf05d"]
+
+[ext_resource type="PackedScene" uid="uid://cm2kmu7iwxrd4" path="res://Scenes/player.tscn" id="1_iukft"]
+[ext_resource type="Script" uid="uid://b88qg0ae2ag02" path="res://Scripts/player.gd" id="2_gl6un"]
+[ext_resource type="Texture2D" uid="uid://7qn05fm0nug8" path="res://Assets/tilemap.png" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://c56bclrr8wyj7" path="res://Scenes/platform.tscn" id="3_kldst"]
+[ext_resource type="Script" uid="uid://ddi10jpfgfnhj" path="res://Scripts/platform.gd" id="4_7lihs"]
+[ext_resource type="Texture2D" uid="uid://q2fg4ne2nfnj" path="res://Assets/heaven.jpg" id="5_b2bpf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kldst"]
+texture = ExtResource("3_j5yw3")
+texture_region_size = Vector2i(60, 60)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -30, 30, -30, 30, 30, -30, 30)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30, -30, 30, -30, 30, 30, -30, 30)
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b2bpf"]
+tile_size = Vector2i(60, 60)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_kldst")
+
+[sub_resource type="Animation" id="Animation_7lihs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2081, -359)]
+}
+
+[sub_resource type="Animation" id="Animation_fgofq"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.0000029, 1),
+"update": 0,
+"values": [Vector2(2081, -359), Vector2(2078, -1593)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2irst"]
+_data = {
+&"RESET": SubResource("Animation_7lihs"),
+&"new_animation": SubResource("Animation_fgofq")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgofq"]
+size = Vector2(178, 68.4375)
+
+[node name="Game" type="Node2D" unique_id=1714245053]
+
+[node name="Layer0" type="TileMapLayer" parent="." unique_id=1012338221]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD4/wAAAQABAAAAAAD5/wAAAQABAAAAAAD6/wAAAQABAAAAAAD7/wAAAQABAAAAAAD8/wAAAQABAAAAAAD9/wAAAQABAAAAAAD+/wAAAQABAAAAAAD//wAAAQABAAAAAAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAD4/wEAAQAAAAAAAAD5/wEAAQAAAAAAAAD6/wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD8/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAADAAIAAQAAAAAAAAACAAIAAQAAAAAAAAABAAIAAQAAAAAAAAAAAAIAAQAAAAAAAAD//wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD8/wIAAQAAAAAAAAD7/wIAAQAAAAAAAAD6/wIAAQAAAAAAAAD5/wIAAQAAAAAAAAD4/wIAAQAAAAAAAAD4/wMAAQAAAAAAAAD5/wMAAQAAAAAAAAD6/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAKAP//AQABAAAAAAALAP//AQABAAAAAAARAAQAAQABAAAAAAASAAQAAQABAAAAAAATAAQAAQABAAAAAAARAP//AQABAAAAAAASAP//AQABAAAAAAAUAP3/AQABAAAAAAAVAP3/AQABAAAAAAAXAP//AQABAAAAAAAYAP//AQABAAAAAAAUAAcAAQABAAAAAAAVAAcAAQABAAAAAAAWAAcAAQABAAAAAAAXAAcAAQABAAAAAAAYAAcAAQABAAAAAAAZAAcAAQABAAAAAAAaAAcAAQABAAAAAAAaAP3/AQABAAAAAAAbAP3/AQABAAAAAAAdAPv/AQABAAAAAAAeAPv/AQABAAAAAAAfAPn/AQABAAAAAAAgAPn/AQABAAAAAAARAAUAAQAAAAAAAAASAAUAAQAAAAAAAAATAAUAAQAAAAAAAAAUAAgAAQAAAAAAAAAVAAgAAQAAAAAAAAAWAAgAAQAAAAAAAAAXAAgAAQAAAAAAAAAYAAgAAQAAAAAAAAAZAAgAAQAAAAAAAAAaAAgAAQAAAAAAAAAOAAIAAQABAAAAAAAPAAIAAQABAAAAAAARAAAAAQAAAAAAAAASAAAAAQAAAAAAAAAUAP7/AQAAAAAAAAAVAP7/AQAAAAAAAAAXAAAAAQAAAAAAAAAYAAAAAQAAAAAAAAAaAP7/AQAAAAAAAAAbAP7/AQAAAAAAAAAdAPz/AQAAAAAAAAAeAPz/AQAAAAAAAAAfAPr/AQAAAAAAAAAgAPr/AQAAAAAAAAAdAAYAAQABAAAAAAAeAAYAAQABAAAAAAAdAAcAAQAAAAAAAAAeAAcAAQAAAAAAAAAOAAMAAQAAAAAAAAAPAAMAAQAAAAAAAAANAAEAAQABAAAAAAANAAIAAQAAAAAAAAAUAAYAAQABAAAAAAAMAP//AQABAAAAAAAMAAAAAQAAAAAAAAD3/wEAAQAAAAAAAAD2/wEAAQAAAAAAAAD2/wIAAQAAAAAAAAD2/wMAAQAAAAAAAAD2/wQAAQAAAAAAAAD3/wQAAQAAAAAAAAD3/wMAAQAAAAAAAAD3/wIAAQAAAAAAAAD4/wQAAQAAAAAAAAD5/wQAAQAAAAAAAAD6/wQAAQAAAAAAAAD7/wQAAQAAAAAAAAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAD+/wQAAQAAAAAAAAD//wQAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAAAAAD3/wAAAQABAAAAAAD2/wAAAQABAAAAAAAJAAAAAQABAAAAAAAIAAAAAQABAAAAAAD2/wUAAQAAAAAAAAD3/wUAAQAAAAAAAAD4/wUAAQAAAAAAAAD5/wUAAQAAAAAAAAD6/wUAAQAAAAAAAAD7/wUAAQAAAAAAAAD8/wUAAQAAAAAAAAD9/wUAAQAAAAAAAAD+/wUAAQAAAAAAAAD//wUAAQAAAAAAAAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_b2bpf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1561868100]
+z_index = -1
+position = Vector2(2079.5, -1720.75)
+scale = Vector2(1.8088236, 1.7178218)
+texture = ExtResource("5_b2bpf")
+
+[node name="platform" parent="." unique_id=1036846882 instance=ExtResource("3_kldst")]
+position = Vector2(2081, -359)
+script = ExtResource("4_7lihs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform" unique_id=2140961074]
+libraries/ = SubResource("AnimationLibrary_2irst")
+playback_auto_capture_transition_type = 4
+playback_auto_capture_ease_type = 2
+
+[node name="Area2D" type="Area2D" parent="platform" unique_id=1953545000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" unique_id=59985270]
+position = Vector2(0, -66)
+shape = SubResource("RectangleShape2D_fgofq")
+
+[node name="Player" parent="." unique_id=1156407903 instance=ExtResource("1_iukft")]
+z_index = 1
+position = Vector2(0, -31)
+script = ExtResource("2_gl6un")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=386867157]
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 5.05
+
+[connection signal="body_entered" from="platform/Area2D" to="platform" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="platform/Area2D" to="platform" method="_on_area_2d_body_exited"]
