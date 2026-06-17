@@ -6,6 +6,7 @@
 size = Vector2(60, 60)
 
 [node name="Player" type="CharacterBody2D" unique_id=1156407903]
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=780256525]
 scale = Vector2(0.016, 0.016)
