@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ddi10jpfgfnhj" path="res://Scripts/platform.gd" id="4_7lihs"]
 [ext_resource type="Texture2D" uid="uid://breujy4vg1umt" path="res://Assets/heaven.jpg" id="5_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://s3l1vj2ubr5p" path="res://Scenes/coin.tscn" id="7_fgofq"]
+[ext_resource type="PackedScene" uid="uid://2gwvlhdnjgnu" path="res://Scenes/killzone.tscn" id="8_2irst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kldst"]
 texture = ExtResource("3_j5yw3")
@@ -63,6 +64,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgofq"]
 size = Vector2(178, 68.4375)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fgofq"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bf53h"]
+
 [node name="Game" type="Node2D" unique_id=1714245053]
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=1012338221]
@@ -76,18 +82,19 @@ position = Vector2(2079.5, -1720.75)
 scale = Vector2(3.2375808, 1.7178218)
 texture = ExtResource("5_b2bpf")
 
-[node name="platform" parent="." unique_id=1036846882 instance=ExtResource("3_kldst")]
+[node name="Platform" parent="." unique_id=1036846882 instance=ExtResource("3_kldst")]
 position = Vector2(2081, -359)
 script = ExtResource("4_7lihs")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="platform" unique_id=2140961074]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" unique_id=2140961074]
 libraries/ = SubResource("AnimationLibrary_2irst")
 playback_auto_capture_transition_type = 4
 playback_auto_capture_ease_type = 2
 
-[node name="Area2D" type="Area2D" parent="platform" unique_id=1953545000]
+[node name="Area2D" type="Area2D" parent="Platform" unique_id=1953545000]
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platform/Area2D" unique_id=59985270]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/Area2D" unique_id=59985270]
 position = Vector2(0, -66)
 shape = SubResource("RectangleShape2D_fgofq")
 
@@ -98,6 +105,9 @@ script = ExtResource("2_gl6un")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=386867157]
 process_callback = 0
+limit_left = -600
+limit_bottom = 650
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 5.05
 
@@ -146,10 +156,22 @@ position = Vector2(1912, -452)
 position = Vector2(2077, -428)
 
 [node name="coin16" parent="Coins" unique_id=1844209456 instance=ExtResource("7_fgofq")]
-position = Vector2(2083, -1792)
+position = Vector2(2085, -1876)
 
 [node name="coin9" parent="Coins" unique_id=1545866574 instance=ExtResource("7_fgofq")]
 position = Vector2(1796, 324)
 
-[connection signal="body_entered" from="platform/Area2D" to="platform" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="platform/Area2D" to="platform" method="_on_area_2d_body_exited"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=952855617]
+position = Vector2(-600, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2068533333]
+shape = SubResource("WorldBoundaryShape2D_fgofq")
+
+[node name="Killzone" parent="." unique_id=680172518 instance=ExtResource("8_2irst")]
+position = Vector2(0, 650)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1693629776]
+shape = SubResource("WorldBoundaryShape2D_bf53h")
+
+[connection signal="body_entered" from="Platform/Area2D" to="Platform" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Platform/Area2D" to="Platform" method="_on_area_2d_body_exited"]
