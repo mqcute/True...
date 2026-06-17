@@ -85,7 +85,7 @@ animations = [{
 radius = 23.0
 height = 60.0
 
-[node name="coin" type="Area2D" unique_id=1538402616]
+[node name="Coin" type="Area2D" unique_id=1538402616]
 collision_mask = 2
 script = ExtResource("1_jgi06")
 
