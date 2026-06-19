@@ -8,10 +8,13 @@ size = Vector2(60, 60)
 [node name="Player" type="CharacterBody2D" unique_id=1156407903]
 collision_layer = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=780256525]
-scale = Vector2(0.016, 0.016)
-texture = ExtResource("1_4flbx")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=485922452]
+position = Vector2(0, -29.6)
 scale = Vector2(0.9867983, 0.9867429)
 shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=780256525]
+scale = Vector2(0.016, 0.016000003)
+texture = ExtResource("1_4flbx")
+centered = false
+offset = Vector2(-1850, -3700)
