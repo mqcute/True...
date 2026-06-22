@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dhwx4a42ks8nt"]
+
+[ext_resource type="PackedScene" uid="uid://2gwvlhdnjgnu" path="res://Scenes/killzone.tscn" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://4df5rvthdmot" path="res://Assets/true.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://xqjm2rjsl15p" path="res://Scripts/enemy.gd" id="1_afpow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
+size = Vector2(60, 60)
+
+[node name="Enemy" type="Node2D" unique_id=1793218692]
+script = ExtResource("1_afpow")
+speed = 120.0
+
+[node name="Killzone" parent="." unique_id=680172518 instance=ExtResource("1_1f0kj")]
+scale = Vector2(0.016, 0.016)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=148597109]
+position = Vector2(0, 0.00036621094)
+scale = Vector2(61.67489, 61.67143)
+shape = SubResource("RectangleShape2D_afpow")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=101487912]
+modulate = Color(0.8671076, 0, 0.13516784, 1)
+scale = Vector2(0.016, 0.016)
+texture = ExtResource("1_7k104")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=843989840]
+target_position = Vector2(35, 0)

@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://s3l1vj2ubr5p"]
 
 [ext_resource type="Texture2D" uid="uid://bqoy74d6m6eqi" path="res://Assets/coin.png" id="1_d5gmh"]
-[ext_resource type="Script" uid="uid://bbu66hhcfvae0" path="res://Scenes/coin.gd" id="1_jgi06"]
+[ext_resource type="Script" uid="uid://bbu66hhcfvae0" path="res://Scripts/coin.gd" id="1_jgi06"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pu15"]
+radius = 23.0
+height = 60.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qo34"]
 atlas = ExtResource("1_d5gmh")
@@ -76,25 +80,21 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7w2r2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pu15"]
-radius = 23.0
-height = 60.0
 
 [node name="Coin" type="Area2D" unique_id=1538402616]
 collision_mask = 2
 script = ExtResource("1_jgi06")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1674619205]
+shape = SubResource("CapsuleShape2D_6pu15")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1130681882]
 sprite_frames = SubResource("SpriteFrames_tthw5")
 autoplay = "default"
 frame_progress = 0.23869029
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1674619205]
-shape = SubResource("CapsuleShape2D_6pu15")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

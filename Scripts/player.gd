@@ -27,14 +27,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 #animations
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.get_axis("ui_left", "ui_right") and is_on_floor(): # walking
-		sprite_2d.rotation_degrees = 10 if sin(Time.get_ticks_msec() * 2 * get_process_delta_time())/3 > 0 else -10
+		sprite_2d.rotation_degrees = 10 if sin(Time.get_ticks_msec() * 2 * delta)/3 > 0 else -10
 		sprite_2d.scale = Vector2(ORIGINAL_SCALE)
 	elif !is_on_floor(): # air
 		sprite_2d.rotation = 0
 		sprite_2d.scale = Vector2(ORIGINAL_SCALE.x,ORIGINAL_SCALE.y * 1.2)
 	else: # idle
 		sprite_2d.rotation = 0
-		@warning_ignore("integer_division")
-		sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y  + sin(Time.get_ticks_msec()/300)/1000)
+		#@warning_ignore("integer_division")
+		#sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y  + sin(Time.get_ticks_msec()/300)/1000)
+		sprite_2d.scale = Vector2(ORIGINAL_SCALE)
