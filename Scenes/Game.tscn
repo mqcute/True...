@@ -185,7 +185,7 @@ position = Vector2(0, 650)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1693629776]
 shape = SubResource("WorldBoundaryShape2D_bf53h")
 
-[node name="Enemy" parent="." unique_id=1793218692 instance=ExtResource("9_bf53h")]
+[node name="Enemy" parent="." unique_id=1394672180 instance=ExtResource("9_bf53h")]
 position = Vector2(1290, 390)
 speed = 60.0
 
