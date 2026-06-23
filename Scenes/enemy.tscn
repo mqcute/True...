@@ -9,7 +9,7 @@ size = Vector2(60, 60)
 
 [node name="Enemy" type="Node2D" unique_id=1793218692]
 script = ExtResource("1_afpow")
-speed = 120.0
+Speed = 120.0
 
 [node name="Killzone" parent="." unique_id=680172518 instance=ExtResource("1_1f0kj")]
 scale = Vector2(0.016, 0.016)
