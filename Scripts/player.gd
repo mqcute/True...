@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 #animations
-func _process(delta: float) -> void:
-	if Input.get_axis("ui_left", "ui_right") and is_on_floor(): # walking
-		sprite_2d.rotation_degrees = 10 if sin(Time.get_ticks_msec() * 2 * delta)/3 > 0 else -10
+func _process(_delta: float) -> void:
+	if Input.get_axis("move_left", "move_right") and is_on_floor(): # walking
+		sprite_2d.rotation_degrees = 10 if sin(Time.get_ticks_msec() * 0.014) > 0 else -10
 		sprite_2d.scale = Vector2(ORIGINAL_SCALE)
 	elif !is_on_floor(): # air
 		sprite_2d.rotation = 0

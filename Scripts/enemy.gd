@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 		direction *= -1
 		ray_cast_2d.rotation_degrees += 180
 	
-	sprite_2d.rotation_degrees = 10 if sin(Time.get_ticks_msec() * 2 * delta)/3 > 0 else -10
+	sprite_2d.rotation_degrees = 10 if sin(Time.get_ticks_msec() * 0.014) > 0 else -10
 	position.x += direction * Speed * delta
