@@ -157,31 +157,31 @@ script = ExtResource("7_71axn")
 position = Vector2(214, -34)
 
 [node name="coin2" parent="Coins" unique_id=780260279 instance=ExtResource("7_fgofq")]
-position = Vector2(688, -98)
+position = Vector2(690, -97)
 
 [node name="coin3" parent="Coins" unique_id=1886699239 instance=ExtResource("7_fgofq")]
-position = Vector2(873, 81)
+position = Vector2(869, 83)
 
 [node name="coin4" parent="Coins" unique_id=570808963 instance=ExtResource("7_fgofq")]
-position = Vector2(1080, -102)
+position = Vector2(1080, -93)
 
 [node name="coin5" parent="Coins" unique_id=593550908 instance=ExtResource("7_fgofq")]
 position = Vector2(1101, 192)
 
 [node name="coin6" parent="Coins" unique_id=149902071 instance=ExtResource("7_fgofq")]
-position = Vector2(1348, 388)
+position = Vector2(1349, 329)
 
 [node name="coin7" parent="Coins" unique_id=396434908 instance=ExtResource("7_fgofq")]
-position = Vector2(1409, 389)
+position = Vector2(1410, 330)
 
 [node name="coin8" parent="Coins" unique_id=222271172 instance=ExtResource("7_fgofq")]
-position = Vector2(1469, 389)
+position = Vector2(1470, 330)
 
 [node name="coin9" parent="Coins" unique_id=1545866574 instance=ExtResource("7_fgofq")]
 position = Vector2(1796, 324)
 
 [node name="coin10" parent="Coins" unique_id=867608504 instance=ExtResource("7_fgofq")]
-position = Vector2(1258, -222)
+position = Vector2(1262, -214)
 
 [node name="coin11" parent="Coins" unique_id=2125571657 instance=ExtResource("7_fgofq")]
 position = Vector2(1440, -95)
@@ -190,10 +190,10 @@ position = Vector2(1440, -95)
 position = Vector2(1622, -218)
 
 [node name="coin13" parent="Coins" unique_id=690003866 instance=ExtResource("7_fgofq")]
-position = Vector2(1792, -334)
+position = Vector2(1801, -339)
 
 [node name="coin14" parent="Coins" unique_id=2039325298 instance=ExtResource("7_fgofq")]
-position = Vector2(1912, -452)
+position = Vector2(1921, -457)
 
 [node name="coin15" parent="Coins" unique_id=1139855445 instance=ExtResource("7_fgofq")]
 position = Vector2(2077, -428)
