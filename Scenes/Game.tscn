@@ -111,7 +111,6 @@ shape = SubResource("RectangleShape2D_fgofq")
 
 [node name="Player" parent="." unique_id=1156407903 instance=ExtResource("1_iukft")]
 z_index = 1
-position = Vector2(0, -30)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=386867157]
 process_callback = 0

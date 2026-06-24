@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-
-const SPEED = 350.0
-const JUMP_VELOCITY = -600.0
+@export_category("Stats")
+@export var SPEED := 350.0
+@export var JUMP_VELOCITY := -600.0
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ORIGINAL_SCALE = sprite_2d.scale
@@ -37,5 +37,5 @@ func _process(delta: float) -> void:
 	else: # idle
 		sprite_2d.rotation = 0
 		@warning_ignore("integer_division")
-		sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y  + sin(Time.get_ticks_msec()/300)/1000)
+		sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y + sin(Time.get_ticks_msec()/300)/1000)
 		#sprite_2d.scale = Vector2(ORIGINAL_SCALE)
