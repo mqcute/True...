@@ -40,8 +40,8 @@ func _physics_process(delta: float) -> void:
 	else: # air
 		sprite_2d.rotation_degrees = 0
 		sprite_2d.scale = Vector2(ORIGINAL_SCALE.x,ORIGINAL_SCALE.y * 1.2)
-		sprite_2d.position = Vector2.ZERO
-		sprite_2d.centered = true
-		sprite_2d.offset = Vector2.ZERO
+		sprite_2d.position = Vector2(0, 30)
+		sprite_2d.centered = false
+		sprite_2d.offset = Vector2(-1850, -3700)
 
 	move_and_slide()

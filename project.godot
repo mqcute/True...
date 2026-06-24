@@ -18,6 +18,14 @@ boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="uid://4df5rvthdmot"
 config/icon="uid://4df5rvthdmot"
 
+[audio]
+
+buses/default_bus_layout="uid://bxipxwnn86isq"
+
+[autoload]
+
+Carefree="*uid://dkhnfca24o6na"
+
 [display]
 
 window/size/viewport_width=1920

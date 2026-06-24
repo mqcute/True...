@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkhnfca24o6na"]
+
+[ext_resource type="AudioStream" uid="uid://3gvou41t3oyo" path="res://Assets/Carefree.mp3" id="1_mjywu"]
+
+[node name="Carefree" type="AudioStreamPlayer" unique_id=1683957168]
+stream = ExtResource("1_mjywu")
+autoplay = true
+mix_target = 1
+bus = &"Music"
