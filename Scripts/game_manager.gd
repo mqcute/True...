@@ -6,4 +6,4 @@ var score : int = 0
 
 func add_point(point : int):
 	score += point
-	coin_text.text = "i have " + str(score) + "/16 " + ("truecoins" if score != 1 else "truecoin")
+	coin_text.text = "i have " + str(score) + "/16 truecoins"
