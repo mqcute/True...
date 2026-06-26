@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4mj1wg61bnir"
+path="res://.godot/imported/R02-04-Steady Applause.wav-798377e5c375003bde9d41b3ff7f2058.sample"
+
+[deps]
+
+source_file="res://Assets/R02-04-Steady Applause.wav"
+dest_files=["res://.godot/imported/R02-04-Steady Applause.wav-798377e5c375003bde9d41b3ff7f2058.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -9,7 +9,398 @@
 [ext_resource type="Script" uid="uid://b4poqhtypy8ry" path="res://Scripts/triangle.gd" id="7_71axn"]
 [ext_resource type="PackedScene" uid="uid://s3l1vj2ubr5p" path="res://Scenes/coin.tscn" id="7_fgofq"]
 [ext_resource type="PackedScene" uid="uid://2gwvlhdnjgnu" path="res://Scenes/killzone.tscn" id="8_2irst"]
+[ext_resource type="AudioStream" uid="uid://4mj1wg61bnir" path="res://Assets/R02-04-Steady Applause.wav" id="8_dahhg"]
+[ext_resource type="Script" uid="uid://01flc84afele" path="res://Scripts/restart.gd" id="9_3so38"]
 [ext_resource type="PackedScene" uid="uid://dhwx4a42ks8nt" path="res://Scenes/enemy.tscn" id="9_bf53h"]
+[ext_resource type="Script" uid="uid://cj74ipfalq7ad" path="res://Scripts/quit.gd" id="10_3cx6b"]
+
+[sub_resource type="Animation" id="Animation_dahhg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%GameManager/../Player/Camera2D/Ending/R0204SteadyApplause:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_left")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(9.59198, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_left")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(9.59198, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_top")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1073.103, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_top")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1073.269, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_right")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_right")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_bottom")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1072.4939, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_bottom")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1072.6599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_71axn"]
+resource_name = "ending"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%GameManager/../Player/Camera2D/Ending:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("%GameManager/../Player/Camera2D/Ending/RichTextLabel:theme_override_colors/default_color:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.16666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%GameManager/../Player/Camera2D/Ending/R0204SteadyApplause:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_left")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(9.59198, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.5986633, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_left")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(9.59198, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.5986633, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_top")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1073.103, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.85051, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_top")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1073.269, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.87817, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_right")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.55601, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_right")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.55601, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/15/type = "bezier"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_bottom")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1072.4939, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.749, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/16/type = "bezier"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_bottom")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1072.6599, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.77666, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dahhg"]
+_data = {
+&"RESET": SubResource("Animation_dahhg"),
+&"ending": SubResource("Animation_71axn")
+}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kldst"]
 texture = ExtResource("3_j5yw3")
@@ -80,6 +471,10 @@ normal = Vector2(1, 0)
 unique_name_in_owner = true
 script = ExtResource("1_bf53h")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameManager" unique_id=565751331]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_dahhg")
+
 [node name="Tilemaps" type="Node" parent="." unique_id=1241038941]
 
 [node name="Background" type="TileMapLayer" parent="Tilemaps" unique_id=1730363874]
@@ -120,6 +515,7 @@ z_index = 1
 position = Vector2(0, -29.56)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=386867157]
+process_mode = 3
 process_callback = 0
 limit_left = -600
 limit_top = -2206
@@ -150,6 +546,70 @@ offset_top = 24.0
 offset_right = 40.0
 offset_bottom = 38.0
 script = ExtResource("7_71axn")
+
+[node name="Ending" type="ColorRect" parent="Player/Camera2D" unique_id=1458553649]
+z_index = 10
+offset_left = -1036.0
+offset_top = -828.44
+offset_right = 1036.0
+offset_bottom = 820.56
+color = Color(1, 1, 1, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Player/Camera2D/Ending" unique_id=823310567]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.248
+anchor_bottom = 0.934
+offset_left = 21.0
+offset_top = 49.0
+offset_right = -535.19995
+offset_bottom = 49.29602
+theme_override_colors/default_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+bbcode_enabled = true
+text = "Thank you so much for playing [i]True...[/i]!!!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="R0204SteadyApplause" type="AudioStreamPlayer" parent="Player/Camera2D/Ending" unique_id=111693862]
+stream = ExtResource("8_dahhg")
+bus = &"SFX"
+
+[node name="Restart" type="Button" parent="Player/Camera2D/Ending" unique_id=1915227399]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46400002
+anchor_top = 0.55300003
+anchor_right = 0.537
+anchor_bottom = 0.59400004
+offset_left = 9.59198
+offset_top = 1073.103
+offset_right = 9.33606
+offset_bottom = 1072.4939
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "restart"
+script = ExtResource("9_3so38")
+
+[node name="Quit" type="Button" parent="Player/Camera2D/Ending" unique_id=1898523987]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46400002
+anchor_top = 0.619
+anchor_right = 0.537
+anchor_bottom = 0.66
+offset_left = 9.59198
+offset_top = 1073.269
+offset_right = 9.33606
+offset_bottom = 1072.6599
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "quit"
+script = ExtResource("10_3cx6b")
 
 [node name="Coins" type="Node" parent="." unique_id=1178372439]
 
