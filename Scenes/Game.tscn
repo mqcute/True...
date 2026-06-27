@@ -12,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://4mj1wg61bnir" path="res://Assets/R02-04-Steady Applause.wav" id="8_dahhg"]
 [ext_resource type="Script" uid="uid://01flc84afele" path="res://Scripts/restart.gd" id="9_3so38"]
 [ext_resource type="PackedScene" uid="uid://dhwx4a42ks8nt" path="res://Scenes/enemy.tscn" id="9_bf53h"]
-[ext_resource type="Script" uid="uid://cj74ipfalq7ad" path="res://Scripts/quit.gd" id="10_3cx6b"]
 
 [sub_resource type="Animation" id="Animation_dahhg"]
 length = 0.001
@@ -130,78 +129,34 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_left")
+tracks/10/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_top")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(9.59198, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1073.103, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_top")
+tracks/11/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_right")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1073.103, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_top")
+tracks/12/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_bottom")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1073.269, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/13/type = "bezier"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_right")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/14/type = "bezier"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_right")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/15/type = "bezier"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_bottom")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1072.4939, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/16/type = "bezier"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_bottom")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1072.6599, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -321,78 +276,34 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_left")
+tracks/10/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_top")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(9.59198, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.5986633, 0, 0),
+"points": PackedFloat32Array(1073.103, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.85051, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_top")
+tracks/11/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_right")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1073.103, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.85051, 0, 0),
+"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.55601, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_top")
+tracks/12/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_bottom")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1073.269, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.87817, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/13/type = "bezier"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_right")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.55601, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/14/type = "bezier"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_right")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(9.33606, -0.25, 0, 0.25, 0, 0, -0.16666667, 1.55601, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/15/type = "bezier"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("%GameManager/../Player/Camera2D/Ending/Restart:offset_bottom")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"handle_modes": PackedInt32Array(0, 2),
 "points": PackedFloat32Array(1072.4939, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.749, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/16/type = "bezier"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("%GameManager/../Player/Camera2D/Ending/Quit:offset_bottom")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(1072.6599, -0.25, 0, 0.25, 0, 0, -0.16666667, 178.77666, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
 
@@ -593,23 +504,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "restart"
 script = ExtResource("9_3so38")
-
-[node name="Quit" type="Button" parent="Player/Camera2D/Ending" unique_id=1898523987]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.46400002
-anchor_top = 0.619
-anchor_right = 0.537
-anchor_bottom = 0.66
-offset_left = 9.59198
-offset_top = 1073.269
-offset_right = 9.33606
-offset_bottom = 1072.6599
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "quit"
-script = ExtResource("10_3cx6b")
 
 [node name="Coins" type="Node" parent="." unique_id=1178372439]
 
