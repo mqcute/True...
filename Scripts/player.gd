@@ -4,8 +4,16 @@ extends CharacterBody2D
 @export var SPEED := 350.0
 @export var JUMP_VELOCITY := -600.0
 
+const TRUE = preload("res://Assets/true.png")
+const LG_TRUE = preload("res://Assets/LGTrue.png")
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var ORIGINAL_SCALE = sprite_2d.scale
+
+var is_lg := false
+
+func _ready() -> void:
+	SignalBus.lg_mode.connect(_change_sprite)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -33,15 +41,34 @@ func _physics_process(delta: float) -> void:
 		else: # idle
 			sprite_2d.rotation_degrees = 0
 			@warning_ignore("integer_division")
-			sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y + sin(Time.get_ticks_msec()/300)/1000)
+			if not is_lg:
+				sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y + sin(Time.get_ticks_msec()/300)/1000)
+			else:
+				pass
+				sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y + sin(Time.get_ticks_msec()/300)/30)
 			sprite_2d.position = Vector2(0, 30)
 			sprite_2d.centered = false
-			sprite_2d.offset = Vector2(-1850, -3700)
+			if not is_lg:
+				sprite_2d.offset = Vector2(-1850, -3700)
+			else:
+				sprite_2d.offset = Vector2(-48, -96)
 	else: # air
 		sprite_2d.rotation_degrees = 0
 		sprite_2d.scale = Vector2(ORIGINAL_SCALE.x,ORIGINAL_SCALE.y * 1.2)
 		sprite_2d.position = Vector2(0, 30)
 		sprite_2d.centered = false
-		sprite_2d.offset = Vector2(-1850, -3700)
-
+		if not is_lg:
+			sprite_2d.offset = Vector2(-1850, -3700)
+		else:
+			sprite_2d.offset = Vector2(-48, -96)
+	
 	move_and_slide()
+
+func _change_sprite(LG : bool):
+	is_lg = LG
+	if LG:
+		sprite_2d.texture = LG_TRUE
+		ORIGINAL_SCALE = Vector2.ONE * 0.617
+	else:
+		sprite_2d.texture = TRUE
+		ORIGINAL_SCALE = Vector2.ONE * 0.016
