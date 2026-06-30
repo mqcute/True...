@@ -68,7 +68,8 @@ func _process(_delta: float) -> void:
 		else:
 			sprite_2d.offset = Vector2(-48, -96)
 
-func _change_sprite(LG : bool):
+
+func _change_sprite(LG : bool) -> void:
 	is_lg = LG
 	if LG:
 		sprite_2d.texture = LG_TRUE
