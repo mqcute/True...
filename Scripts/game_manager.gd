@@ -15,7 +15,7 @@ func add_point(point : int):
 		animation_player.play("ending")
 		get_tree().paused = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	if Input.is_action_just_pressed("lg_toggle"):
 		lg = not lg

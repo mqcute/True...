@@ -23,13 +23,19 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+		
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	move_and_slide()
+
+
+func _process(_delta: float) -> void:
+	var direction := Input.get_axis("move_left", "move_right")
 	# Animations
 	if is_on_floor():
 		if direction: # walking
@@ -40,11 +46,11 @@ func _physics_process(delta: float) -> void:
 			sprite_2d.offset = Vector2.ZERO
 		else: # idle
 			sprite_2d.rotation_degrees = 0
-			@warning_ignore("integer_division")
 			if not is_lg:
+				@warning_ignore("integer_division")
 				sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y + sin(Time.get_ticks_msec()/300)/1000)
 			else:
-				pass
+				@warning_ignore("integer_division")
 				sprite_2d.scale = Vector2(ORIGINAL_SCALE.x, ORIGINAL_SCALE.y + sin(Time.get_ticks_msec()/300)/30)
 			sprite_2d.position = Vector2(0, 30)
 			sprite_2d.centered = false
@@ -61,8 +67,6 @@ func _physics_process(delta: float) -> void:
 			sprite_2d.offset = Vector2(-1850, -3700)
 		else:
 			sprite_2d.offset = Vector2(-48, -96)
-	
-	move_and_slide()
 
 func _change_sprite(LG : bool):
 	is_lg = LG
