@@ -5,11 +5,17 @@ extends Area2D
 @onready var clink_1: AudioStreamPlayer = $Clink1
 @onready var clink_2: AudioStreamPlayer = $Clink2
 @onready var clink_3: AudioStreamPlayer = $Clink3
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	SignalBus.lg_mode.connect(_change_animation)
+
 
 func _on_body_entered(_body: Node2D) -> void:
 	game_manager.add_point(1)
 	_play_random()
 	animation_player.play("PickUp")
+
 
 func _play_random() -> void:
 	match randi_range(1, 3):
@@ -19,3 +25,13 @@ func _play_random() -> void:
 			clink_2.play()
 		3:
 			clink_3.play()
+
+
+func _change_animation(lg) -> void:
+	var frame = animated_sprite_2d.frame
+	if lg:
+		animated_sprite_2d.play("lg")
+		animated_sprite_2d.frame = frame
+	else:
+		animated_sprite_2d.play("default")
+		animated_sprite_2d.frame = frame
