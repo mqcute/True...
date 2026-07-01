@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c56bclrr8wyj7"]
 
 [ext_resource type="Texture2D" uid="uid://4df5rvthdmot" path="res://Assets/true.png" id="1_mi635"]
+[ext_resource type="Script" uid="uid://nl3jrt1n1jad" path="res://Scripts/platform_sprite_2d.gd" id="2_n5262"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
 size = Vector2(178, 60)
@@ -15,3 +16,4 @@ one_way_collision = true
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1109878200]
 scale = Vector2(0.048, 0.016)
 texture = ExtResource("1_mi635")
+script = ExtResource("2_n5262")

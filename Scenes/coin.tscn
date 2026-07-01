@@ -247,9 +247,7 @@ shape = SubResource("CapsuleShape2D_6pu15")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1130681882]
 sprite_frames = SubResource("SpriteFrames_tthw5")
-animation = &"lg"
 autoplay = "default"
-frame_progress = 0.39394322
 
 [node name="Clink1" type="AudioStreamPlayer" parent="." unique_id=103963110]
 stream = ExtResource("3_ffmqm")
