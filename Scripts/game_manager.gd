@@ -5,6 +5,12 @@ extends Node
 
 var score : int = 0
 var ending_playing : bool = false
+#var lg : bool = false
+
+func _ready() -> void:
+	await get_tree().process_frame
+	SignalBus.lg_mode.emit(SignalBus.lg)
+
 
 func add_point(point : int):
 	score += point
@@ -13,3 +19,10 @@ func add_point(point : int):
 		ending_playing = true
 		animation_player.play("ending")
 		get_tree().paused = true
+
+
+func _process(_delta: float) -> void:
+	pass
+	if Input.is_action_just_pressed("lg_toggle"):
+		SignalBus.lg = not SignalBus.lg
+		SignalBus.lg_mode.emit(SignalBus.lg)
