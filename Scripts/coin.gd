@@ -28,7 +28,10 @@ func _play_random() -> void:
 
 
 func _change_animation(lg) -> void:
+	var frame = animated_sprite_2d.frame
 	if lg:
 		animated_sprite_2d.play("lg")
+		animated_sprite_2d.frame = frame
 	else:
 		animated_sprite_2d.play("default")
+		animated_sprite_2d.frame = frame
